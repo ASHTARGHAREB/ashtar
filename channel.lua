@@ -2,14 +2,14 @@
 BY : TshAkETEAM
 Channel Files : https://t.me/tshakeFiles
 ]]
-local function keko_tshake(data)
+local function AshtaR_GhareB(data)
 local msg = data.message_
 redis = (loadfile "./libs/redis.lua")()
 database = Redis.connect('127.0.0.1', 6379)
 sudos = dofile('sudo.lua')
 https = require("ssl.https")
 bot_id_keko = {string.match(token, "^(%d+)(:)(.*)")}
-bot_id = tonumber(bot_id_keko[1])
+bot_id = tonumber(bot_id_AshtaR[1])
 JSON = (loadfile  "./libs/dkjson.lua")()
 local function send(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
 local TextParseMode = {ID = "TextParseModeMarkdown"}
@@ -90,15 +90,15 @@ send(msg.chat_id_, msg.id_, 1, '_Subscription has been activated_', 1, 'md')
 else
 send(msg.chat_id_, msg.id_, 1, '📡┇تم تفعيل خاصيه الاشتراك', 1, 'html')
 end
-redis:set('kekoch'..msg.sender_user_id_..''..bot_id, 'end')  
-redis:set('kekochtext'..bot_id, text)  
+redis:set('AshtaRch'..msg.sender_user_id_..''..bot_id, 'end')  
+redis:set('AshtaRchtext'..bot_id, text)  
 return false end
 end
 if kekoch == 'id' then
 local url_keko = 'https://api.telegram.org/bot'..token..'/getChatMember?chat_id='..text..'&user_id='..bot_id
-local keko3 = https.request(url_keko)
-local keko5 = JSON.decode(keko3)
-if (not keko5.result or keko5.result.status == 'left') then   
+local AshtaR3 = https.request(url_AshtaR)
+local AshtaR5 = JSON.decode(AshtaR3)
+if (not AshtaR5.result or AshtaR5.result.status == 'left') then   
 if database:get('lang🇬🇵'..msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '_Bot is not a channel moderator_', 1, 'md')
 else
@@ -106,14 +106,14 @@ send(msg.chat_id_, msg.id_, 1, '⚠️┇البوت ليس ادمن في الق�
 end
   return false end    
   text = msg.content_.text_
-  if (keko5.result or keko5.result.status ~= 'left') then
+  if (AshtaR5.result or AshtaR5.result.status ~= 'left') then
   if database:get('lang🇬🇵'..msg.chat_id_) then
   send(msg.chat_id_, msg.id_, 1, '_Send the message that appears to non-subscribers_', 1, 'md')
   else
   send(msg.chat_id_, msg.id_, 1, '📥┇ارسل الكليشه التي سوف تظهر لغير المشترك في القناه', 1, 'html')
   end
-  redis:set('kekoch'..msg.sender_user_id_..''..bot_id, 'text')  
-  redis:set('kekoid'..bot_id, text)  
+  redis:set('AshtaRch'..msg.sender_user_id_..''..bot_id, 'text')  
+  redis:set('AshtaRid'..bot_id, text)  
   end
   return false end
   end
@@ -124,30 +124,30 @@ end
   else
   send(msg.chat_id_, msg.id_, 1, '📡┇تم تعطيل خاصيه للاشتراك', 1, 'html')
   end
-  redis:del('kekoid'..bot_id)  
-  redis:del('kekochtext'..bot_id)      
+  redis:del('AshtaRid'..bot_id)  
+  redis:del('AshtaRchtext'..bot_id)      
 end
 end
 end
 text = msg.content_.text_
 if is_mod(msg.sender_user_id_, msg.chat_id_) then 
-local keko_ch = database:get("kekoid"..bot_id)
-local keko_text = database:get("kekochtext"..bot_id)
-if (keko_ch and keko_text) then 
-local url_keko = 'https://api.telegram.org/bot'..token..'/getChatMember?chat_id='..keko_ch..'&user_id='..msg.sender_user_id_
-local keko3 = https.request(url_keko)
-local keko5 = JSON.decode(keko3)
-if (not keko5.result or keko5.result.status == 'left') then   
+local AshtaR_ch = database:get("AshtaRid"..bot_id)
+local AshtaR_text = database:get("AshtaRchtext"..bot_id)
+if (AshtaR_ch and AshtaR_text) then 
+local url_AshtaR = 'https://api.telegram.org/bot'..token..'/getChatMember?chat_id='..keko_ch..'&user_id='..msg.sender_user_id_
+local AshtaR3 = https.request(url_keko)
+local AshtaR5 = JSON.decode(AshtaR3)
+if (not AshtaR5.result or AshtaR5.result.status == 'left') then   
 send(msg.chat_id_, msg.id_, 1, keko_text, 1, 'md')
 return "end" end
 end
 end
 end
 return {
-	keko_tshake = keko_tshake,
+	AshtaR_GhareB = AshtaR_GhareB,
 }
 
 --[[
-BY : TshAkETEAM
+BY : AshtaRGhareB
 Channel Files : https://t.me/tshakeFiles
 ]]
