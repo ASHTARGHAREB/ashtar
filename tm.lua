@@ -1,8 +1,7 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
-local function keko_tshake(data)
+local function AshtaR_GHareB(data)
 sudos = dofile('sudo.lua')
   local msg = data.message_
   local function send(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
@@ -26,17 +25,16 @@ sudos = dofile('sudo.lua')
   if tonumber(msg.sender_user_id_) == tonumber(sudo_add) then 
   text = msg.content_.text_
   if text:match("^(tm) (.*)$") then
-  local kekoj = {string.match(text, "^(tm) (.*)$")}     
-   local keko = io.popen(kekoj[2]):read("*all")
-   send(msg.chat_id_, msg.id_, 1, keko, 1)
+  local AshtaRj = {string.match(text, "^(tm) (.*)$")}     
+   local AshtaR = io.popen(AshtaRj[2]):read("*all")
+   send(msg.chat_id_, msg.id_, 1, AshtaR, 1)
 end
   end
   end
   end
   return {
-    keko_tshake = keko_tshake,
+    AshtaR_GhareB = AshtaR_GhareB,
   }
   --[[
-  BY : TshAkETEAM
-  Channel Files : https://t.me/tshakeFiles
+  BY : AshtaRGhareB
   ]]
