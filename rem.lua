@@ -1,8 +1,7 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
-local function keko_tshake(data)
+local function AshtaR_GHAREb(data)
 local msg = data.message_
 redis = (loadfile "./libs/redis.lua")()
 database = Redis.connect('127.0.0.1', 6379)
@@ -32,58 +31,58 @@ local msg = data.message_
 text = msg.content_.text_
 if (text and text == 'اضف رد ميديا' and  tonumber(msg.sender_user_id_) == tonumber(sudo_add) ) then 
   send(msg.chat_id_, msg.id_, 1, 'ارسال الان الكلمة', 1, 'md')
-  database:set("keko:adda"..msg.sender_user_id_,"yes")
+  database:set("AshtaR:adda"..msg.sender_user_id_,"yes")
   return false
 end  
 if text then 
-local keko = database:get("keko:adda"..msg.sender_user_id_)
-if keko == 'yes' then 
+local AshtaR = database:get("AshtaR:adda"..msg.sender_user_id_)
+if AshtaR == 'yes' then 
   send(msg.chat_id_, msg.id_, 1, "الكلمه : "..text.."\n ارسال الان الميديا", 1, 'md')
-  database:set("keko:adda"..msg.sender_user_id_,"yes2")
-  database:set("keko:add2"..msg.sender_user_id_, text)
+  database:set("AshtaR:adda"..msg.sender_user_id_,"yes2")
+  database:set("AshtaR:add2"..msg.sender_user_id_, text)
   return false
 end
 end
 if (data.message_.content_.sticker_ or data.message_.content_.voice_ or data.message_.content_.animation_) then 
-  local keko = database:get("keko:adda"..msg.sender_user_id_)
-  if keko == 'yes2' then 
+  local AshtaR = database:get("AshtaR:adda"..msg.sender_user_id_)
+  if AshtaR == 'yes2' then 
   send(msg.chat_id_, msg.id_, 1, "تم الحفظ بنجاح", 1, 'md')
-  database:del("keko:adda"..msg.sender_user_id_)
-  local keko = database:get("keko:add2"..msg.sender_user_id_)
+  database:del("AshtaR:adda"..msg.sender_user_id_)
+  local AshtaR = database:get("AshtaR:add2"..msg.sender_user_id_)
   if data.message_.content_.sticker_ then 
-  database:set("keko:st"..keko, data.message_.content_.sticker_.sticker_.persistent_id_)
+  database:set("AshtaR:st"..AshtaR, data.message_.content_.sticker_.sticker_.persistent_id_)
   end 
   if data.message_.content_.voice_ then 
-  database:set("keko:vo"..keko, data.message_.content_.voice_.voice_.persistent_id_)
+  database:set("AshtaR:vo"..keko, data.message_.content_.voice_.voice_.persistent_id_)
   end 
   if data.message_.content_.animation_ then 
-  database:set("keko:gif"..keko, data.message_.content_.animation_.animation_.persistent_id_)
+  database:set("AshtaR:gif"..keko, data.message_.content_.animation_.animation_.persistent_id_)
 end
-  database:del("keko:add2"..msg.sender_user_id_)
+  database:del("AshtaR:add2"..msg.sender_user_id_)
   return false
   end
   end
     if (text and text == 'حذف رد ميديا' and  tonumber(msg.sender_user_id_) == tonumber(sudo_add) ) then 
       send(msg.chat_id_, msg.id_, 1, 'ارسال الان الكلمة', 1, 'md')
-      database:set("keko:adda"..msg.sender_user_id_,"yes3")
+      database:set("AshtaR:adda"..msg.sender_user_id_,"yes3")
       return false
     end  
     if text then 
-    local keko = database:get("keko:adda"..msg.sender_user_id_)
-    if (keko and keko == 'yes3') then 
+    local AshtaR = database:get("AshtaR:adda"..msg.sender_user_id_)
+    if (AshtaR and AshtaR == 'yes3') then 
       send(msg.chat_id_, msg.id_, 1, "تم حذف : "..text, 1, 'md')
-      database:del("keko:adda"..msg.sender_user_id_)
-      database:del("keko:gif"..text)
-      database:del("keko:vo"..text)
-      database:del("keko:st"..text)
+      database:del("AshtaR:adda"..msg.sender_user_id_)
+      database:del("AshtaR:gif"..text)
+      database:del("AshtaR:vo"..text)
+      database:del("AshtaR:st"..text)
       return false
     end
     end
     if text then
-      local gif = database:get("keko:gif"..text)
-      local vo = database:get("keko:vo"..text)
-      local st = database:get("keko:st"..text)  
-      local id_keko = msg.id_/2097152/0.5 
+      local gif = database:get("AshtaR:gif"..text)
+      local vo = database:get("AshtaR:vo"..text)
+      local st = database:get("AshtaR:st"..text)  
+      local id_AshtaR = msg.id_/2097152/0.5 
       if vo then 
       local url = 'https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&voice='..vo..'&reply_to_message_id='..id_keko
       HTTPS.request(url)
@@ -102,9 +101,8 @@ end
       end
 end
 return {
-	keko_tshake = keko_tshake,
+	AshtaR_GhareB = AshtaR_GhareB,
 }
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
