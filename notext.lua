@@ -1,8 +1,8 @@
 --[[
-BY : TshAkETEAM
+BY : AshtaRGhareB
 Channel Files : https://t.me/tshakeFiles
 ]]
-local function keko_tshake(data)
+local function AshtaR_GhareB(data)
     JSON = (loadfile  "./libs/dkjson.lua")()
     local msg = data.message_
     text = msg.content_.text_
@@ -10,8 +10,8 @@ local function keko_tshake(data)
     database = Redis.connect('127.0.0.1', 6379)
     sudos = dofile('sudo.lua')
     HTTPS = require("ssl.https")
-    bot_id_keko = {string.match(token, "^(%d+)(:)(.*)")}
-    bot_id = tonumber(bot_id_keko[1])
+    bot_id_AshtaR = {string.match(token, "^(%d+)(:)(.*)")}
+    bot_id = tonumber(bot_id_AshtaR[1])
     local function send(chat_id, reply_to_message_id, disable_notification, text, disable_web_page_preview, parse_mode)
         local TextParseMode = {ID = "TextParseModeMarkdown"}
         tdcli_function ({
@@ -58,24 +58,24 @@ local function keko_tshake(data)
             var = true
             end
                 end
-              local keko_add_sudo = redis:get('sudoo'..user_id..''..bot_id)
-              if keko_add_sudo then
+              local AshtaR_add_sudo = redis:get('sudoo'..user_id..''..bot_id)
+              if AshtaR_add_sudo then
               var = true
               end
             return var
             end
 if (text and text == 'قفل الفشار' and is_mod(msg.sender_user_id_, msg.chat_id_)) then 
 send(msg.chat_id_, msg.id_, 1, "تم قفل الفشار", 1, 'mod')	
-database:set("keko:bantext"..bot_id..msg.chat_id_,"keko")
+database:set("AshtaR:bantext"..bot_id..msg.chat_id_,"AshtaR")
 end
 if (text and text == 'فتح الفشار' and is_mod(msg.sender_user_id_, msg.chat_id_)) then 
 send(msg.chat_id_, msg.id_, 1, "تم فتح الفشار", 1, 'mod')	
-database:del("keko:bantext"..bot_id..msg.chat_id_)
+database:del("AshtaR:bantext"..bot_id..msg.chat_id_)
 end
-local ikeko = database:get("keko:bantext"..bot_id..msg.chat_id_)
-if (ikeko and ikeko == 'keko') then
+local ikeko = database:get("AshtaR:bantext"..bot_id..msg.chat_id_)
+if (iAshtaR and iAshtaR == 'AshtaR') then
 if (not is_mod(msg.sender_user_id_, msg.chat_id_) and text) then 
-local keko = { -- the List By : t.me/r_rrt
+local AshtaR = { -- the List By : t.me/r_rrt
         'عير',
         'كس',
         'كحبه', -- the List By : t.me/r_rrt
