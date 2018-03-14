@@ -1,8 +1,7 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
-local function keko_tshake(data)
+local function AshtaR_GhareB(data)
     local msg = data.message_
     redis = (loadfile "./libs/redis.lua")()
     database = Redis.connect('127.0.0.1', 6379)
@@ -32,37 +31,36 @@ local function keko_tshake(data)
     text = msg.content_.text_
     if (text and text == 'تعين start' and  tonumber(msg.sender_user_id_) == tonumber(sudo_add) ) then 
       send(msg.chat_id_, msg.id_, 1, 'ارسال الان الكليشه', 1, 'md')
-      database:set("keko:addo"..msg.sender_user_id_, "yes")
+      database:set("AshtaR:addo"..msg.sender_user_id_, "yes")
       return false
     end  
     if text then 
-    local keko = database:get("keko:addo"..msg.sender_user_id_)
-    if keko == 'yes' then 
+    local AshtaR = database:get("AshtaR:addo"..msg.sender_user_id_)
+    if AshtaR == 'yes' then 
       send(msg.chat_id_, msg.id_, 1, "تم الحفظ بنجاح", 1, 'md')
-      database:del("keko:addo"..msg.sender_user_id_)
-      database:set("keko:start0"..bot_id, text)
+      database:del("AshtaR:addo"..msg.sender_user_id_)
+      database:set("AshtaR:start0"..bot_id, text)
       return false
     end
     end
 local id2 = tostring(msg.chat_id_)
 if (text and id2:match('^(%d+)')) then 
 if text == '/start' then 
-local start = database:get("keko:start0"..bot_id)
-local kkt = ''
+local start = database:get("AshtaR:start0"..bot_id)
+local AHT = ''
 if start then 
-kkt = start.. "\n[🦁┇TshAkE TEAM](https://t.me/TshAkETEAM)" -- هلو ماوصيك 
+AHT = start.. "\n[🦁┇AshtaR TEAM]" -- هلو ماوصيك 
 else 
-kkt = "مرحبا بك في بوت حمايه الكروبات".. "\n\n[🦁┇TshAkE TEAM](https://t.me/TshAkETEAM)" -- هلو ماوصيك 
+AHT = "مرحبا بك في بوت حمايه الكروبات".. "\n\n[🦁┇AshtaR TEAM]" -- هلو ماوصيك 
 end
-send(msg.chat_id_, msg.id_, 1, kkt, 1, 'md')
+send(msg.chat_id_, msg.id_, 1, AHT, 1, 'md')
 end
 end
     end
     return {
-        keko_tshake = keko_tshake,
+        AshtaR_GhareB = AshtaR_GhareB,
     }
     --[[
-    BY : TshAkETEAM
-    Channel Files : https://t.me/tshakeFiles
+    BY : AshtaRGHareB
     ]]
     
