@@ -1,6 +1,5 @@
 --[[
 BY : AshtaRGhareB
-Channel Files : https://t.me/tshakeFiles
 ]]
 local function AshtaR_GhareB(data)
     JSON = (loadfile  "./libs/dkjson.lua")()
@@ -175,10 +174,9 @@ end
 end
 end
     return {
-        keko_tshake = keko_tshake,
+        AshtaR_GhareB = AshtaR_GhareB,
     }
     --[[
-    BY : TshAkETEAM
-    Channel Files : https://t.me/tshakeFiles
+    BY : AshtaRGhareB
     ]]
     
