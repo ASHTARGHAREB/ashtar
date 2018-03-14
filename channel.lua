@@ -1,6 +1,5 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
 local function AshtaR_GhareB(data)
 local msg = data.message_
@@ -149,5 +148,4 @@ return {
 
 --[[
 BY : AshtaRGhareB
-Channel Files : https://t.me/tshakeFiles
 ]]
