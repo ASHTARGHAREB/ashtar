@@ -1,8 +1,7 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
-local function keko_tshake(data)
+local function AshtaR_GhareB(data)
 local msg = data.message_
 http = require("socket.http")
 JSON = (loadfile  "./libs/dkjson.lua")()
@@ -29,19 +28,18 @@ if msg.content_.text_ then
 text = msg.content_.text_
 local text = msg.content_.text_:gsub('zh','زغرفه')
 if text:match("^(زغرفه) (.*)$") then
-local kekoj = {string.match(text, "^(زغرفه) (.*)$")}     
+local AshtaRj = {string.match(text, "^(زغرفه) (.*)$")}     
 local URL = require('socket.url')
-local kekol = http.request('http://tshake.tk/TshakeApi/zh.php?name=' ..URL.escape(kekoj[2]))
-local kekod = json:decode(kekol)
-send(msg.chat_id_, msg.id_, 1, 'Ⓜ️┇الكلمه : `'..kekoj[2]..'`\n\n1⃣┇ `'..kekod.zh1..'`\n\n2⃣┇ `'..kekod.zh2..'`\n\n3⃣┇ `'..kekod.zh3..'`', 1, 'md')          
+local AshtaR1 = http.request('http://tshake.tk/TshakeApi/zh.php?name=' ..URL.escape(AshtaRj[2]))
+local AshtaRd = json:decode(AshtaR1)
+send(msg.chat_id_, msg.id_, 1, 'Ⓜ️┇الكلمه : `'..AshtaRj[2]..'`\n\n1⃣┇ `'..AshtaRd.zh1..'`\n\n2⃣┇ `'..AshtaRd.zh2..'`\n\n3⃣┇ `'..AshtaRd.zh3..'`', 1, 'md')          
 end
 end
 end
 return {
-	keko_tshake = keko_tshake,
+	AshtaR_GhareB = AshtaR_GhareB,
 }
 
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGHareB
 ]]
