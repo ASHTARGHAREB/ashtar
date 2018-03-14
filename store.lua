@@ -1,9 +1,8 @@
 --[[
-BY : TshAkETEAM
-Channel Files : https://t.me/tshakeFiles
+BY : AshtaRGhareB
 ]]
 
-local function keko_tshake(data)
+local function AshtaR_GhareB(data)
     JSON = (loadfile  "./libs/dkjson.lua")()
     local msg = data.message_
     URL = require('socket.url')
@@ -50,8 +49,8 @@ local function keko_tshake(data)
             var = true
             end
               end
-              local keko_add_sudo = redis:get('sudoo'..user_id..''..bot_id)
-              if keko_add_sudo then
+              local AshtaR_add_sudo = redis:get('sudoo'..user_id..''..bot_id)
+              if AshtaR_add_sudo then
               var = true
               end
             return var
@@ -59,17 +58,17 @@ end
 if text then 
 if text == 'تعطيل التطبيقات' then 
 send(msg.chat_id_, msg.id_, 1, "☑┇تم تعطيل البحث عن التطبيقات في المجموعه", 1, 'html')
-database:set("keko:story"..bot_id..msg.chat_id_,'keko')
+database:set("AshtaR:story"..bot_id..msg.chat_id_,'AshtaR')
 end
 if text == 'تفعيل التطبيقات' then 
 send(msg.chat_id_, msg.id_, 1, "☑┇تم تفعيل البحث عن التطبيقات في المجموعه", 1, 'html')
-database:del("keko:story"..bot_id..msg.chat_id_)
+database:del("AshtaR:story"..bot_id..msg.chat_id_)
 end
-local keko = database:get("keko:story"..bot_id..msg.chat_id_)
-if not keko then 
+local AshtaR = database:get("AshtaR:story"..bot_id..msg.chat_id_)
+if not AshtaR then 
   local text = msg.content_.text_:gsub('app','تطبيق')
   if text:match("^(تطبيق) (.*)$") then 
-  local keko2 = {string.match(text, "^(تطبيق) (.*)$")}
+  local AshtaR2 = {string.match(text, "^(تطبيق) (.*)$")}
   keyboard = {} 
 	keyboard.inline_keyboard = {
 	  {
@@ -87,7 +86,7 @@ if not keko then
 		{text = "appsodo", url='http://www.appsodo.com/search_'..keko2[2]..'_1'},
 	  },  
     }
-    local id_keko = msg.id_/2097152/0.5 
+    local id_AshtaR = msg.id_/2097152/0.5 
 HTTPS.request('https://api.telegram.org/bot'..token..'/sendMessage?chat_id='..msg.chat_id_..'&reply_to_message_id='..id_keko..'&text='..URL.escape('💡┇تم البحث\n🔽┇اليك النتائج')..'&reply_markup='..JSON.encode(keyboard))
 end
 end
@@ -95,10 +94,9 @@ end
 end  -- end text 
 end
 return {
-    keko_tshake = keko_tshake,
+    AshtaR_GhareB = AshtaR_GhareB,
 }
 --[[
- BY : TshAkETEAM
- Channel Files : https://t.me/tshakeFiles
+ BY : AshtaRGhareB
 ]]
     
